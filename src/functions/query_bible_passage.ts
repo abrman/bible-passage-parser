@@ -22,7 +22,6 @@ const query_bible_passage = (query: string) => {
   query = query.replace(/ ?- ?/g, "-").replace(/ ?; ?/g, ";").replace(/ ?, ?/g, ",").replace(/ ?: ?/g, ":");
 
   const parts = [...query.matchAll(regex)].map((v) => v[0].replace(/(^[\( ,;\-]+)|([\( ,;\-]+$)/g, ""));
-
   let book_index: number;
   let translation: string;
 
@@ -59,6 +58,11 @@ const query_bible_passage = (query: string) => {
       });
     }
   });
+
+  list_of_passages_before_parsing = list_of_passages_before_parsing.map((v) => ({
+    ...v,
+    translation: v.translation === "WAITING_FOR_ASSIGNMENT" ? default_translation : v.translation,
+  }));
 
   const parsed = list_of_passages_before_parsing.flatMap((entry) => {
     const { book_index, unparsed_passage, translation } = entry;

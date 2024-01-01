@@ -1,6 +1,6 @@
 {
   "name": "bible-passage-parser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Parse bible passage references effectively.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

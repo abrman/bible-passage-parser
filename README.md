@@ -12,7 +12,7 @@ npm  i  bible-passage-parser
 
 ## Usage
 
-[Codesandbox Example](//https://to-be-added)
+[Codesandbox Example](https://codesandbox.io/p/sandbox/bible-passage-parser-example-jjxysx)
 
 ## Methods
 

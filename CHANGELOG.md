@@ -1,5 +1,12 @@
 # bible-passage-parser
 
+## 0.0.3
+
+### Patch Changes
+
+- 6e4dd6d: Removed logging
+- 34d1fd8: Updated readme with example
+
 ## 0.0.2
 
 ### Patch Changes

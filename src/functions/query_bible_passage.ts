@@ -47,7 +47,7 @@ const query_bible_passage = (query: string) => {
           translation: v.translation === "WAITING_FOR_ASSIGNMENT" ? default_translation : v.translation,
         }));
       } else {
-        console.error(`Unknown book ${part}`);
+        // console.error(`Unknown book ${part}`);
       }
     } else if (book_index >= 0) {
       //likely a passage

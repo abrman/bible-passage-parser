@@ -1,5 +1,11 @@
 # bible-passage-parser
 
+## 0.0.4
+
+### Patch Changes
+
+- fd6318c: bugfix for languages with diacritics (accents)
+
 ## 0.0.3
 
 ### Patch Changes

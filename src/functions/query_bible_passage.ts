@@ -4,6 +4,8 @@ import parse_passage from "./parse_passage";
 
 let default_translation = "KJV";
 
+const normalize = (input: string) => input.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
 const set_default_translation = (translation_code: string) => {
   if (
     Object.keys(bibles)
@@ -21,7 +23,8 @@ const query_bible_passage = (query: string) => {
 
   query = query.replace(/ ?- ?/g, "-").replace(/ ?; ?/g, ";").replace(/ ?, ?/g, ",").replace(/ ?: ?/g, ":");
 
-  const parts = [...query.matchAll(regex)].map((v) => v[0].replace(/(^[\( ,;\-]+)|([\( ,;\-]+$)/g, ""));
+  const parts = [...normalize(query).matchAll(regex)].map((v) => v[0].replace(/(^[\( ,;\-]+)|([\( ,;\-]+$)/g, ""));
+  console.log(parts);
   let book_index: number;
   let translation: string;
 
